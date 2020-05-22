@@ -1,65 +1,135 @@
 #hero {
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  border-bottom: 0px;
-  background: $white-color;
-  font-weight: 400;
-  color: $dark-blue-text;
-  padding: 0rem 5.6rem;
-  margin-bottom: 0;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+	min-height: 100vh;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	border-bottom: 0px;
+	background: $white-color;
+	font-weight: 400;
+	color: #ffffff;
+	padding: 0rem 5.6rem;
+	margin-bottom: 0.5rem;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
 
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
+	// If you want to set a background image on the hero section, uncomment these with yout custom image
 
-  /* background: url("/src/assets/[your-image].png");
-  background-position: center;
-  background-size: cover; */
+	background:url("/src/assets/back-img.jpg");
+	background-position: center;
+	background-size: cover;
 
-  @include respond(phone) {
-    padding: 0rem $default-font-size;
-  }
+	@include respond(phone) {
+		padding: 0rem $default-font-size;
+	}
 
-  .hero-title {
-    font-size: 5.6rem;
-    font-weight: 700;
-    margin-bottom: 3.2rem;
-    text-align: left;
+	#know-more-link {
+		margin: auto;
+	}
 
-    @include respond(tab-land) {
-      font-size: 4rem;
-    }
-    @include respond(tab-port) {
-      font-size: 3.6rem;
-      text-align: center;
-    }
-    @include respond(phone) {
-      font-size: 3.5rem;
-      line-height: 1.5;
-    }
-    @include respond(phone-xs) {
-      font-size: 2.8rem;
-    }
-  }
+	#know-block {
+		width: 20rem;
+		font-size: 1rem;
+		margin: auto;
+	}
 
-  .hero-cta {
-    display: flex;
+	.hover_effect {
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		display: block;
+		width: 100%;
+		padding: 1px;
+		position: relative;
+		z-index: 2;
+		text-decoration: none;
+		color: #2C3E50;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		font-size: 3em;
+		font-weight: 600;
+		-webkit-user-select: none;
+		-webkit-touch-callout: none;
+	}
 
-    @include respond(tab-port) {
-      justify-content: center;
-    }
+	.hover_effect:after {
+		content: "";
+		height: 5px;
+		left: 0;
+		width: 1px;
+		position: absolute;
+		-webkit-transition: width 1s ease, background-color 1s ease;
+		-moz-transition: width 1s ease, background-color 1s ease;
+		;
+		-ms-transition: width 1s ease, background-color 1s ease;
+		;
+		-o-transition: width 1s ease, background-color 1s ease;
+		;
+		transition: width 1s ease, background-color 1s ease;
+		;
+		right: 0;
+		margin: 0 auto;
+	}
 
-    & a {
-      font-size: 2.4rem;
+	.hover_effect:hover {
+		color: lightblue;
+		-webkit-transition: color 1s ease;
+		-moz-transition: color 1s ease;
+		-ms-transition: color 1s ease;
+		-o-transition: color 1s ease;
+		transition: color 1s ease;
+		cursor: pointer;
+	}
 
-      @include respond(phone) {
-        font-size: 2rem;
-      }
-    }
-  }
+	.hover_effect:hover:after,
+	.hover_effect:focus:after {
+		width: 100%;
+		background-color: lightblue;
+	}
+
+	#my-name {
+		color: lightblue;
+	}
+
+	.hero-title {
+		font-size: 5.6rem;
+		font-weight: 700;
+		margin-bottom: 3.2rem;
+		text-align: center;
+
+		@include respond(tab-land) {
+			font-size: 4rem;
+		}
+
+		@include respond(tab-port) {
+			font-size: 3.6rem;
+			text-align: center;
+		}
+
+		@include respond(phone) {
+			font-size: 3.5rem;
+			line-height: 1.5;
+		}
+
+		@include respond(phone-xs) {
+			font-size: 2.8rem;
+		}
+	}
+
+	.hero-cta {
+		display: flex;
+
+		@include respond(tab-port) {
+			justify-content: center;
+		}
+
+		& a {
+			font-size: 2.4rem;
+
+			@include respond(phone) {
+				font-size: 2rem;
+			}
+		}
+	}
 }
